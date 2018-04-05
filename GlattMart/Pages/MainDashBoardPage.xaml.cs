@@ -36,8 +36,8 @@ namespace GlattMart.Pages
             //listViewDashboard.ItemsSource = listData;
             listViewDashboard.ItemTapped += listViewDashboard_ItemTapped;
             searchEntry.TextChanged += searchEntry_TextChanged;
-            lbl_username.Text=  Settings.UserName;
-            lbl_email.Text = Settings.Email;
+            //lbl_username.Text=  Settings.UserName;
+            //lbl_email.Text = Settings.Email;
         }
 
         private void searchEntry_TextChanged(object sender, TextChangedEventArgs e)

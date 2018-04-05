@@ -10,25 +10,32 @@ namespace GlattMart
         public App()
         {
             InitializeComponent();
-            // MainPage = new NavigationPage(new MainDashBoardPage());
+            MainPage = new NavigationPageGradientHeader(new MainDashBoardPage())
+            {
+                BarTextColor = Color.White,
+                LeftColor = Color.FromHex("#3b56a3"),
+                RightColor = Color.FromHex("#0f2a7c")
+            };
+
             //if (Settings.UserName == "")
             //{
-                MainPage = new NavigationPageGradientHeader(new LoginPage())
-                {
-                    BarTextColor = Color.White,
-                    LeftColor = Color.FromHex("#3b56a3"),
-                    RightColor = Color.FromHex("#0f2a7c")
-                };
+            //    MainPage = new NavigationPageGradientHeader(new LoginPage())
+            //    {
+            //        BarTextColor = Color.White,
+            //        LeftColor = Color.FromHex("#3b56a3"),
+            //        RightColor = Color.FromHex("#0f2a7c")
+            //    };
             //}
             //else
             //{
             //    MainPage = new NavigationPageGradientHeader(new MainDashBoardPage())
-            //  {
-            //      BarTextColor = Color.White,
-            //      LeftColor = Color.FromHex("#3b56a3"),
-            //      RightColor = Color.FromHex("#0f2a7c")
-            //  };  
+            //    {
+            //        BarTextColor = Color.White,
+            //        LeftColor = Color.FromHex("#3b56a3"),
+            //        RightColor = Color.FromHex("#0f2a7c")
+            //    };
             //}
+
         }
 
         protected override void OnStart()

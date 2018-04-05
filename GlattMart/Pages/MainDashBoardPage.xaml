@@ -8,52 +8,52 @@
              x:Class="GlattMart.Pages.MainDashBoardPage">
     <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer"
                                          DrawerWidth ="200" DrawerHeaderHeight="250" DrawerFooterHeight="0">
-        
-    <navigationdrawer:SfNavigationDrawer.ContentView>
-            
-    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-    <Grid.RowDefinitions>
-       <RowDefinition Height="40*"/>
-       <RowDefinition Height="60*"/>             
-     </Grid.RowDefinitions> 
-     <AbsoluteLayout Grid.Row="0" BackgroundColor="Black" Padding="0,0,0,0">
-    <Image 
+
+        <navigationdrawer:SfNavigationDrawer.ContentView>
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <AbsoluteLayout Grid.Row="0" BackgroundColor="Black" Padding="0,0,0,0">
+                    <Image 
         Aspect="AspectFill" 
         AbsoluteLayout.LayoutBounds="1,1,1,1"
         AbsoluteLayout.LayoutFlags="All"
         Source="background_image"
         BackgroundColor="Gray"
         />
-                    
-        <Image Source="menu"
+
+                    <Image Source="menu"
         Aspect="AspectFit"       
          AbsoluteLayout.LayoutBounds="0,0.1,0.1,25"
         AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
-         <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Tapped="hamburgerButton_Clicked" />                             
-       </Image.GestureRecognizers>                   
-     </Image>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                Tapped="hamburgerButton_Clicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
 
-        <Image Source="logo-2"
+                    <Image Source="logo-2"
         Aspect="AspectFit" 
         HeightRequest="200"
         WidthRequest="200"       
         AbsoluteLayout.LayoutBounds="0.5,0.1,200,200"
-        AbsoluteLayout.LayoutFlags="PositionProportional">                 
-     </Image>            
-       <!--<local:Badge  Text="3" WidthRequest="25" HeightRequest="25" VerticalOptions="Center" HorizontalOptions="Center"/>-->
-        
-        <StackLayout Padding="5"
+        AbsoluteLayout.LayoutFlags="PositionProportional">
+                    </Image>
+                    <!--<local:Badge  Text="3" WidthRequest="25" HeightRequest="25" VerticalOptions="Center" HorizontalOptions="Center"/>-->
+
+                    <StackLayout Padding="5"
          AbsoluteLayout.LayoutBounds=".98,0.05,50,50"
         AbsoluteLayout.LayoutFlags="PositionProportional" >
-           <Button BorderRadius="13" IsVisible="true" WidthRequest="25" Text="" HeightRequest="25"
-                               BackgroundColor="Transparent" TextColor="White"  />         
-         <Image Source="cartIcon" HeightRequest="20" WidthRequest="20" Margin="-20,-5,0,0"
-        Aspect="AspectFit"/>            
-       </StackLayout>
-                
-    <StackLayout 
+                        <Button BorderRadius="13" IsVisible="true" WidthRequest="25" Text="" HeightRequest="25"
+                               BackgroundColor="Transparent" TextColor="White"  />
+                        <Image Source="cartIcon" HeightRequest="20" WidthRequest="20" Margin="-20,-5,0,0"
+        Aspect="AspectFit"/>
+                    </StackLayout>
+
+                    <StackLayout 
         HorizontalOptions="FillAndExpand"
         Orientation="Horizontal"
                     
@@ -61,52 +61,128 @@
         AbsoluteLayout.LayoutBounds="0,1,1,70"
         AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional"
         >
-        <Entry x:Name="searchEntry" Placeholder="Search Item No. / Keyword" PlaceholderColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
-         <Image 
+                        <Entry x:Name="searchEntry" Placeholder="Search Item No. / Keyword" PlaceholderColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                        <Image 
         Aspect="AspectFill" 
         Source="barcode_scan"
         />
-    </StackLayout>
-</AbsoluteLayout>       
-    <syncfusion:SfListView BackgroundColor="Silver" Grid.Row="1" x:Name="listViewDashboard" 
+                    </StackLayout>
+                </AbsoluteLayout>
+                <syncfusion:SfListView BackgroundColor="Silver" Grid.Row="1" x:Name="listViewDashboard" 
                            ItemsSource="{Binding SubCategoryData}" SelectedItem="{Binding OnSelectedCategoryData}" AutoFitMode="Height">
-            
-   </syncfusion:SfListView>       
-  </Grid>      
-            
-    </navigationdrawer:SfNavigationDrawer.ContentView>
-        
-    <navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
 
-    <local:Gradient_Stack StartColor="#0f2a7c"  EndColor="#3b56a3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >            
-            <Grid Margin="0,20,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>    
-                </Grid.RowDefinitions>
-      <Image Source="circle.png" HeightRequest="110" Grid.Row="0"  BackgroundColor="#1aa1d6" VerticalOptions="Center" HorizontalOptions="Center"/>
-              <Label x:Name="lbl_username" Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
-              <Label x:Name="lbl_email" Grid.Row="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
+                </syncfusion:SfListView>
             </Grid>
-</local:Gradient_Stack>                
- 
-    </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>   
-        
-    <navigationdrawer:SfNavigationDrawer.DrawerContentView>
-    <local:Gradient_Stack StartColor="#0f2a7c" EndColor="#3b56a3"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-    <StackLayout Orientation="Vertical">   
-    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="White"/>                
-    <Label Text="Logout" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontSize="20" TextColor="White">
-        <Label.GestureRecognizers>
-            <TapGestureRecognizer
-                Tapped="logout_Clicked" />                             
-       </Label.GestureRecognizers>                        
- </Label>                       
- </StackLayout>             
- </local:Gradient_Stack>               
-</navigationdrawer:SfNavigationDrawer.DrawerContentView>        
+
+        </navigationdrawer:SfNavigationDrawer.ContentView>
+
+        <navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
+
+            <local:Gradient_Stack StartColor="#0f2a7c"  EndColor="#3b56a3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                  >
+                <StackLayout Orientation="Vertical">
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="90" BackgroundColor="White" />
+                    <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="White"
+                    />
+
+                    <Grid Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                          
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                       
+                       
+
+                        <Image Grid.Column="0" Grid.Row="0" Source="profile_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                        <Image Grid.Column="0" Grid.Row="1" Source="star_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                        <Image Grid.Column="0" Grid.Row="2" Source="list_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                       
+                        <Label Grid.Column="1" Grid.Row="0" Text="Profile" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand" />
+                        <Label Grid.Column="1" Grid.Row="1" Text="Specials" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand"/>
+                        <Label Grid.Column="1" Grid.Row="2" Text="Shopping List" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand"/>
+                       
+                        <!--<Image Source="circle.png" HeightRequest="110" Grid.Row="0"  BackgroundColor="#1aa1d6" VerticalOptions="Center" HorizontalOptions="Center"/>
+              <Label x:Name="lbl_username" Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
+              <Label x:Name="lbl_email" Grid.Row="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>-->
+                    </Grid>
+
+                </StackLayout>
+
+
+            </local:Gradient_Stack>
+
+        </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
+
+        <navigationdrawer:SfNavigationDrawer.DrawerContentView>
+            <local:Gradient_Stack StartColor="#0f2a7c" EndColor="#3b56a3"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+               <StackLayout>
+                   <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="White"
+                   />
+                    <Grid Margin="0,15">
+                      <Grid.RowDefinitions>
+                          <RowDefinition Height="Auto"/>
+
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="50"/>
+                          <ColumnDefinition Width="*"/>
+                      </Grid.ColumnDefinitions>
+                      <Image Grid.Column="0" Grid.Row="0" Source="logout_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+
+<Label Text="Login" Grid.Column="1" Grid.Row="0"  TextColor="White" FontSize="Small" VerticalOptions="CenterAndExpand">
+                          <Label.GestureRecognizers>
+                              <TapGestureRecognizer Tapped="logout_Clicked" />
+                          </Label.GestureRecognizers>
+                      </Label>
+                    </Grid>
+                 
+                </StackLayout>
+                
+                <!--<StackLayout Orientation="Vertical">
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="White"/>
+
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="White"/>
+                    <Grid Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.Row="0" Source="profile_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                        <Image Grid.Column="0" Grid.Row="1" Source="star_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                        <Image Grid.Column="0" Grid.Row="2" Source="list_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                        <Image Grid.Column="0" Grid.Row="3" Source="logout_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
+                        <Label Grid.Column="1" Grid.Row="0" Text="Profile" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand" />
+                        <Label Grid.Column="1" Grid.Row="1" Text="Specials" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand"/>
+                        <Label Grid.Column="1" Grid.Row="2" Text="Shopping List" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="Login" Grid.Column="1" Grid.Row="3"  TextColor="White" FontSize="Small" VerticalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="logout_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        --><!--<Image Source="circle.png" HeightRequest="110" Grid.Row="0"  BackgroundColor="#1aa1d6" VerticalOptions="Center" HorizontalOptions="Center"/>
+              <Label x:Name="lbl_username" Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
+              <Label x:Name="lbl_email" Grid.Row="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>--><!--
+                    </Grid>
+                   
+                </StackLayout>-->
+            </local:Gradient_Stack>
+        </navigationdrawer:SfNavigationDrawer.DrawerContentView>
 
     </navigationdrawer:SfNavigationDrawer>
-    
+
 </ContentPage>
