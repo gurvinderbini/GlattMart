@@ -45,7 +45,7 @@
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand" 
                                  Padding="10,10,10,10"
-                                 AbsoluteLayout.LayoutBounds="0,1,1,100"
+                                 AbsoluteLayout.LayoutBounds="0,1,1,120"
                                  AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
                         <StackLayout  Orientation="Horizontal" >
                             <Entry x:Name="searchEntry" Placeholder="Search Item No. / Keyword"
@@ -54,12 +54,14 @@
                             <Image Aspect="AspectFill" Source="barcode_scan" />
                         </StackLayout>
                         <Button Text="Search" BackgroundColor="White" TextColor="DimGray"
-                                HorizontalOptions="FillAndExpand" Clicked="Button_OnClicked"></Button>
+                                HorizontalOptions="FillAndExpand" Clicked="Button_OnClicked" 
+                                Margin="3"></Button>
                     </StackLayout>
                    
                 </AbsoluteLayout>
                 <syncfusion:SfListView BackgroundColor="Silver" Grid.Row="1" x:Name="listViewDashboard" 
-                           ItemsSource="{Binding SubCategoryData}" SelectedItem="{Binding OnSelectedCategoryData}" AutoFitMode="Height">
+                           ItemsSource="{Binding SubCategoryData}" SelectedItem="{Binding OnSelectedCategoryData}" 
+                                       AutoFitMode="Height">
 
                 </syncfusion:SfListView>
             </Grid>

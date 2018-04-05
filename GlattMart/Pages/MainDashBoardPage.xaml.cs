@@ -102,7 +102,14 @@ namespace GlattMart.Pages
 
         private void Button_OnClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (searchEntry.Text != null || searchEntry.Text != "")
+            {
+                if (listViewDashboard.DataSource != null)
+                {
+                    this.listViewDashboard.DataSource.Filter = FilterContacts;
+                    this.listViewDashboard.DataSource.RefreshFilter();
+                }
+            }
         }
     }
 }
