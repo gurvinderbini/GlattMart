@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-1" translatesAutoresizingMaskIntoConstraints="NO" id="itc-Aa-VUJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="itc-Aa-VUJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Fes-wQ-yEd"/>
+                            <constraint firstItem="itc-Aa-VUJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fOb-c8-bDo"/>
+                            <constraint firstAttribute="trailing" secondItem="itc-Aa-VUJ" secondAttribute="trailing" id="kO8-pD-ZNo"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="itc-Aa-VUJ" secondAttribute="bottom" id="ssf-gD-ads"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.6627"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splashImage" width="640" height="1136"/>
+        <image name="address" width="6.66666651" height="10.666667"/>
+        <image name="arrow_icon" width="20" height="20"/>
+        <image name="Back" width="30" height="30"/>
+        <image name="background_image" width="750" height="530"/>
+        <image name="backgroundImage" width="184" height="327.333344"/>
+        <image name="BackgroundMask" width="375" height="667"/>
+        <image name="backIcon" width="21" height="20.666666"/>
+        <image name="barcode" width="176.666672" height="50.6666679"/>
+        <image name="barcode_scan" width="50" height="50"/>
+        <image name="bgHome" width="375" height="667"/>
+        <image name="blackCancel" width="32" height="32"/>
+        <image name="bottomImage" width="375" height="96.3333359"/>
+        <image name="cancel" width="27" height="27"/>
+        <image name="cartIcon" width="21" height="21"/>
+        <image name="categoryIpadPlaceHolder" width="240" height="240"/>
+        <image name="circle" width="310" height="310"/>
+        <image name="closeIcon" width="7.66666651" height="7.66666651"/>
+        <image name="company" width="6.33333349" height="12.666667"/>
+        <image name="building" width="149" height="149"/>
+        <image name="catalog" width="77" height="94.6666641"/>
+        <image name="clock" width="60" height="60"/>
+        <image name="Label" width="60" height="59.6666679"/>
+        <image name="menuHeaderBackground" width="375" height="140"/>
+        <image name="ordernow" width="54" height="65.6666641"/>
+        <image name="quick" width="48" height="64"/>
+        <image name="default" width="180" height="180"/>
+        <image name="Double Left" width="30" height="30"/>
+        <image name="Double Right" width="30" height="30"/>
+        <image name="downArrow" width="8.666667" height="5.66666651"/>
+        <image name="edit" width="64" height="64"/>
+        <image name="email" width="31" height="25"/>
+        <image name="facebook" width="40" height="40"/>
+        <image name="food" width="368" height="351"/>
+        <image name="Forward" width="30" height="30"/>
+        <image name="glattLogo" width="103.5" height="59.5"/>
+        <image name="google_plus" width="40" height="40"/>
+        <image name="gradient_image" width="414" height="496"/>
+        <image name="homeBackground" width="375" height="667"/>
+        <image name="homeNextArrow" width="17" height="27"/>
+        <image name="icon-edit" width="40" height="39"/>
+        <image name="logo" width="324.333344" height="93"/>
+        <image name="logo_image_new" width="414" height="238"/>
+        <image name="logo-2" width="227" height="134"/>
+        <image name="logout" width="10" height="10"/>
+        <image name="menu" width="20" height="20"/>
+        <image name="menuBackground" width="100" height="100"/>
+        <image name="menuPlaceholderIcon" width="50" height="50"/>
+        <image name="minus" width="10" height="1"/>
+        <image name="mobile" width="6.66666651" height="13"/>
+        <image name="name" width="10.333333" height="8.333333"/>
+        <image name="nav6p" width="414" height="55"/>
+        <image name="navBGImage" width="414" height="55"/>
+        <image name="navigationBarBackground" width="375" height="64"/>
+        <image name="new_backgroundImage" width="184" height="327.333344"/>
+        <image name="nextArrow" width="5.66666651" height="8.666667"/>
+        <image name="passwordIcon" width="20" height="27"/>
+        <image name="plus" width="6.66666651" height="6.66666651"/>
+        <image name="preview" width="30" height="17"/>
+        <image name="productDetailsPlaceHolder" width="210.666672" height="210.666672"/>
+        <image name="productPlaceholder" width="225" height="225"/>
+        <image name="profile" width="100" height="100"/>
+        <image name="profileedit" width="40" height="40"/>
+        <image name="Rectangle" width="562.5" height="1000.5"/>
+        <image name="scanBarcode" width="60.6666679" height="60"/>
+        <image name="searchIcon" width="23.666666" height="23.666666"/>
+        <image name="selected" width="41" height="39"/>
+        <image name="shoppingCartProductImage" width="68" height="64"/>
+        <image name="shoppinglist" width="100" height="100"/>
+        <image name="splash" width="1242" height="1488"/>
+        <image name="splash-1" width="750" height="1334"/>
+        <image name="star5" width="100" height="100"/>
+        <image name="unselected" width="41" height="39"/>
+        <image name="userIcon" width="31" height="27"/>
+    </resources>
+</document>

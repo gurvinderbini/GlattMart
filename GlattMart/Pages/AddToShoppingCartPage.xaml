@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ Title="Product Detail"
+ xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"            
+ x:Class="GlattMart.Pages.AddToShoppingCartPage">
+<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Command="{Binding ShoppingCartNavigationCommand}" Icon="cartIcon" Text="Item 1" Priority="0" />
+</ContentPage.ToolbarItems>   
+<ContentPage.Content>
+ <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+  <Grid>
+  <Grid.RowDefinitions>
+   <RowDefinition Height="Auto"/>
+   <RowDefinition Height="*"/>                   
+   </Grid.RowDefinitions>   
+   <StackLayout Grid.Row="0">
+   <Label x:Name="lbl_ProductId" Text="{Binding Id}" HeightRequest="40" BackgroundColor="#eeeeee" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+   <Image Source="{Binding BaseImg}" HorizontalOptions="FillAndExpand" HeightRequest="150" />            
+   <Label Text="{Binding Name}"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+  <Label x:Name="lbl_Price" Text="{Binding Price}"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>                 
+  </StackLayout>                  
+  <ScrollView Grid.Row="1" BackgroundColor="Silver" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+  <Grid  RowSpacing="1">
+  <Grid.RowDefinitions>
+   <RowDefinition Height="Auto"/> 
+   <RowDefinition Height="Auto"/>   
+   </Grid.RowDefinitions>                         
+    <StackLayout Grid.Row="0" Margin="0,1,0,0"  Padding="10" BackgroundColor="White">
+     <Grid>
+     <Grid.ColumnDefinitions>
+     <ColumnDefinition Width="3*"/>
+     <ColumnDefinition Width="7*"/>                               
+     </Grid.ColumnDefinitions> 
+     <Label Text="UPC"  Grid.Column="0" />
+     <Label Text="{Binding UPC}" Grid.Column="1" />                            
+     </Grid>                       
+    </StackLayout>
+
+    <StackLayout Grid.Row="1"  Padding="10" BackgroundColor="White">
+     <Grid>
+     <Grid.ColumnDefinitions>
+     <ColumnDefinition Width="3*"/>
+     <ColumnDefinition Width="7*"/>                               
+     </Grid.ColumnDefinitions> 
+     <Label Text="Unit"  Grid.Column="0" />
+      <Label Text="{Binding StockQty}" Grid.Column="1" />               
+     </Grid>                       
+    </StackLayout>
+                        
+     <StackLayout Grid.Row="2"  Padding="10" BackgroundColor="White">
+     <Grid>
+     <Grid.ColumnDefinitions>
+     <ColumnDefinition Width="3*"/>
+     <ColumnDefinition Width="7*"/>                               
+     </Grid.ColumnDefinitions> 
+     <Label Text="Brand"  Grid.Column="0" />
+      <Label Text="{Binding PCK}" Grid.Column="1" />               
+     </Grid>                       
+    </StackLayout>
+                        
+     <StackLayout Grid.Row="3"  Padding="10" BackgroundColor="White">
+     <Grid>
+     <Grid.ColumnDefinitions>
+     <ColumnDefinition Width="3*"/>
+     <ColumnDefinition Width="7*"/>                               
+     </Grid.ColumnDefinitions> 
+     <Label Text="QTY"  Grid.Column="0" />
+     <numeric:SfNumericUpDown Value="{Binding SelectedQTY}" x:Name="numericUpDown" 
+       Minimum="0"   HeightRequest="30" ParsingMode="Decimal"
+       FormatString="N" SpinButtonAlignment="Both"  MaximumDecimalDigits="0"
+       Grid.Column="1"/>              
+     </Grid>                       
+    </StackLayout>
+                        
+   <!-- <Label Text="UPC" Grid.Row="0" Grid.Column="0" Margin="5"/>
+    <Label Text="{Binding UPC}" Grid.Row="0" Grid.Column="1" Margin="5"/> 
+    <Label Text="UPC" Grid.Row="1" Grid.Column="0"/>
+    <Label Text="{Binding UPC}" Grid.Row="1" Grid.Column="1"/>
+    <Label Text="Size" Grid.Row="2" Grid.Column="0"/>
+    <Label Text="{Binding Size}" Grid.Row="2" Grid.Column="1"/> 
+     <Label Text="QTY" Grid.Row="3" Grid.Column="0"/>                    
+    <numeric:SfNumericUpDown x:Name="numericUpDown" Minimum="0"  HeightRequest="30" ParsingMode="Decimal" FormatString="n" SpinButtonAlignment="Both" Grid.Row="3" Grid.Column="1"/>-->                    
+  </Grid>                      
+  </ScrollView>
+               
+  </Grid> 
+ <StackLayout VerticalOptions="EndAndExpand" HeightRequest="50"  BackgroundColor="#084190" HorizontalOptions="FillAndExpand" Grid.Row="2" >
+
+  <Label Text="ADD TO CART" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+     <Label.GestureRecognizers>
+        <TapGestureRecognizer
+                Command="{Binding AddToCartCommand}" />                             
+       </Label.GestureRecognizers>                 
+ </Label>              
+ </StackLayout>            
+ </StackLayout>             
+</ContentPage.Content>
+</ContentPage>

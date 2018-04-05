@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+ xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"            
+x:Class="GlattMart.ShoppingCartListViewCell">
+<ViewCell.View>
+ <Grid BackgroundColor="White"  Margin="0,0,0,1" Padding="10">
+  <Grid.ColumnDefinitions>
+   <ColumnDefinition Width="Auto"/>
+   <ColumnDefinition Width="8*"/>
+   <ColumnDefinition Width="2*"/>             
+   </Grid.ColumnDefinitions>          
+   <Image Grid.Column="0" Source="{Binding image}" HeightRequest="100" WidthRequest="100"/>            
+    <StackLayout Grid.Column="1" HorizontalOptions="Start"> 
+   <Label  Text="{Binding productName}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" TextColor="Black" FontSize="14" />
+   <Label  Text="{Binding price}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" TextColor="#c0c0c0" FontSize="10" />
+    <numeric:SfNumericUpDown x:Name="numericUpDown" Value="{Binding quantity}"
+       Minimum="0"  HeightRequest="30" WidthRequest="100" ParsingMode="Decimal" HorizontalOptions="Start"
+       FormatString="N" SpinButtonAlignment="Both" MaximumDecimalDigits="0"
+       Grid.Column="1"/>             
+   </StackLayout>           
+ <StackLayout Grid.Column="2" VerticalOptions="FillAndExpand">          
+  <Image  Source="cancel" Margin="0,0,5,0" HorizontalOptions="End" VerticalOptions="Start">
+  <Image.GestureRecognizers>
+  <TapGestureRecognizer Tapped="OnDeleteTapped" />                   
+  </Image.GestureRecognizers>                  
+  </Image>                  
+  <Label  Text="{Binding subtotal}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="End" TextColor="#393939" FontSize="14"  HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
+</StackLayout>                 
+  </Grid>      
+</ViewCell.View>
+</ViewCell>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+ xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"          
+  x:Class="GlattMart.ListViewCell.CategoriesViewCell">
+ <ViewCell.View>
+  <StackLayout BackgroundColor="White" Margin="5" Padding="7">
+   <Frame BackgroundColor="Transparent" HasShadow="false"   OutlineColor="Silver" CornerRadius="0" >
+   <!--<Image Source="productPlaceholder" />-->       
+    <ffimageloading:CachedImage Grid.Column="0" x:Name="Image" HorizontalOptions="Center" VerticalOptions="Center"
+            LoadingPlaceholder="productPlaceholder.png" Source="{Binding image}" ErrorPlaceholder="productPlaceholder.png" DownsampleToViewSize="true"
+           WidthRequest="150" HeightRequest="150" Aspect="AspectFill" >
+        </ffimageloading:CachedImage>             
+  </Frame>
+   <Label Text="{Binding name}" TextColor="#393939" FontSize="14" Margin="5"/>         
+  </StackLayout>      
+ </ViewCell.View>
+</ViewCell>

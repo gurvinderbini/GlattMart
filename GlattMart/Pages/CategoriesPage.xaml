@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+ xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+ xmlns:local="clr-namespace:GlattMart;assembly=GlattMart"                
+ Title="Categories"            
+ x:Class="GlattMart.Pages.CategoriesPage">
+<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Clicked="Handle_Clicked" Order="Primary"  Icon="cartIcon" Text="Item 1" Priority="0" />
+</ContentPage.ToolbarItems>   
+<ContentPage.Content>
+ <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+  <syncfusion:SfListView x:Name="listViewCategories" ItemsSource="{Binding SubCategoryData}" SelectedItem="{Binding OnSelectedCategoryData}" AutoFitMode="Height">
+    <syncfusion:SfListView.LayoutManager>
+     <syncfusion:GridLayout>
+      <syncfusion:GridLayout.SpanCount>
+       <OnPlatform x:TypeArguments="x:Int32">
+         <OnPlatform.WinPhone>
+           <OnIdiom x:TypeArguments="x:Int32" Phone="2" Tablet="4" Desktop="4"/>
+         </OnPlatform.WinPhone>
+         <OnPlatform.Android>
+           <OnIdiom x:TypeArguments="x:Int32" Phone="2" Tablet="4" />
+         </OnPlatform.Android>
+         <OnPlatform.iOS>
+           <OnIdiom x:TypeArguments="x:Int32" Phone="2" Tablet="4" />
+         </OnPlatform.iOS>
+       </OnPlatform>
+     </syncfusion:GridLayout.SpanCount>
+   </syncfusion:GridLayout>
+    </syncfusion:SfListView.LayoutManager>            
+   </syncfusion:SfListView>            
+ </StackLayout>             
+</ContentPage.Content>
+</ContentPage>

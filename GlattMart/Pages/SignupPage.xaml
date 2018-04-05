@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:local="clr-namespace:GlattMart;assembly=GlattMart"    
+Title="Welcome"             
+ x:Class="GlattMart.Pages.SignupPage">
+<ContentPage.Content>
+<local:Gradient_Stack StartColor="#0f2a7c" EndColor="#3b56a3" Padding="10" Spacing="10">
+ <local:MaterialEntry HorizontalOptions="FillAndExpand" AccentColor="White" Placeholder="FIRST NAME" Text="{Binding FirstName}"/> 
+ <local:MaterialEntry HorizontalOptions="FillAndExpand" AccentColor="White" Placeholder="LAST NAME" Text="{Binding LastName}"/> 
+ <local:MaterialEntry HorizontalOptions="FillAndExpand" AccentColor="White" Placeholder="EMAIL ADDRESS" Text="{Binding Email}"/> 
+ <local:MaterialEntry HorizontalOptions="FillAndExpand" AccentColor="White" Placeholder="PASSWORD" IsPassword="True" Text="{Binding Password}" />     
+ <local:MaterialEntry HorizontalOptions="FillAndExpand" AccentColor="White" Placeholder="MOBILE NUMBER" Text="{Binding Mobileno}"/>            
+ <Button Text="SIGNUP" TextColor="Black" BackgroundColor="White" BorderRadius="0" Margin="0,10,0,0" Command="{Binding SignUpCommand}"/>  
+ <Label HorizontalOptions="CenterAndExpand" Text="OR" FontAttributes="Bold" TextColor="White"/>  
+   <Label HorizontalOptions="CenterAndExpand" Text="Signup with"  TextColor="White"/>            
+  <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+     <Image Source="facebook"/>
+               
+     <Image Source="google_plus"/>           
+  </StackLayout>              
+</local:Gradient_Stack>        
+</ContentPage.Content>
+</ContentPage>
