@@ -43,14 +43,20 @@
                         <Image Source="cartIcon" HeightRequest="20" WidthRequest="20" 
                                Margin="-20,-5,0,0" Aspect="AspectFit"/>
                     </StackLayout>
-
-                    <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal" 
-                                  Padding="10,10,10,10"
-                                  AbsoluteLayout.LayoutBounds="0,1,1,70"
-                                  AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
-                        <Entry x:Name="searchEntry" Placeholder="Search Item No. / Keyword" PlaceholderColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
-                        <Image Aspect="AspectFill" Source="barcode_scan" />
+                    <StackLayout HorizontalOptions="FillAndExpand" 
+                                 Padding="10,10,10,10"
+                                 AbsoluteLayout.LayoutBounds="0,1,1,100"
+                                 AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional">
+                        <StackLayout  Orientation="Horizontal" >
+                            <Entry x:Name="searchEntry" Placeholder="Search Item No. / Keyword"
+                                   PlaceholderColor="Black" HorizontalTextAlignment="Center"
+                                   HorizontalOptions="FillAndExpand"/>
+                            <Image Aspect="AspectFill" Source="barcode_scan" />
+                        </StackLayout>
+                        <Button Text="Search" BackgroundColor="White" TextColor="DimGray"
+                                HorizontalOptions="FillAndExpand" Clicked="Button_OnClicked"></Button>
                     </StackLayout>
+                   
                 </AbsoluteLayout>
                 <syncfusion:SfListView BackgroundColor="Silver" Grid.Row="1" x:Name="listViewDashboard" 
                            ItemsSource="{Binding SubCategoryData}" SelectedItem="{Binding OnSelectedCategoryData}" AutoFitMode="Height">
@@ -83,11 +89,11 @@
                         <Image Grid.Column="0" Grid.Row="0" Source="profile_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
                         <Image Grid.Column="0" Grid.Row="1" Source="star_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
                         <Image Grid.Column="0" Grid.Row="2" Source="list_icon.png" Aspect="AspectFit" HeightRequest="30"></Image>
-                       
+
                         <Label Grid.Column="1" Grid.Row="0" Text="Profile" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand" />
                         <Label Grid.Column="1" Grid.Row="1" Text="Specials" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand"/>
                         <Label Grid.Column="1" Grid.Row="2" Text="Shopping List" TextColor="White"  FontSize="Small" VerticalOptions="CenterAndExpand"/>
-                       
+
                         <!--<Image Source="circle.png" HeightRequest="110" Grid.Row="0"  BackgroundColor="#1aa1d6" VerticalOptions="Center" HorizontalOptions="Center"/>
               <Label x:Name="lbl_username" Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>
               <Label x:Name="lbl_email" Grid.Row="2" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="20" TextColor="White"/>-->
@@ -100,30 +106,30 @@
 
         <navigationdrawer:SfNavigationDrawer.DrawerContentView>
             <local:Gradient_Stack StartColor="#0f2a7c" EndColor="#3b56a3"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-               <StackLayout>
-                   <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="1"
+                <StackLayout>
+                    <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="1"
                              BackgroundColor="White"/>
                     <Grid Margin="0,15">
-                      <Grid.RowDefinitions>
-                          <RowDefinition Height="Auto"/>
-                      </Grid.RowDefinitions>
-                      <Grid.ColumnDefinitions>
-                          <ColumnDefinition Width="50"/>
-                          <ColumnDefinition Width="*"/>
-                      </Grid.ColumnDefinitions>
-                      <Image Grid.Column="0" Grid.Row="0" Source="logout_icon.png" 
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Grid.Row="0" Source="logout_icon.png" 
                              Aspect="AspectFit" HeightRequest="30"></Image>
 
-                       <Label Text="Login" Grid.Column="1" Grid.Row="0"  TextColor="White"
+                        <Label Text="Login" Grid.Column="1" Grid.Row="0"  TextColor="White"
                               FontSize="Small" VerticalOptions="CenterAndExpand">
-                          <Label.GestureRecognizers>
-                              <TapGestureRecognizer Tapped="logout_Clicked" />
-                          </Label.GestureRecognizers>
-                      </Label>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="logout_Clicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </Grid>
-                 
+
                 </StackLayout>
-                           </local:Gradient_Stack>
+            </local:Gradient_Stack>
         </navigationdrawer:SfNavigationDrawer.DrawerContentView>
     </navigationdrawer:SfNavigationDrawer>
 

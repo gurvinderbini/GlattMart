@@ -35,7 +35,7 @@ namespace GlattMart.Pages
             listViewDashboard.ItemTemplate = new DataTemplate(typeof(DashboardListviewCell));
             //listViewDashboard.ItemsSource = listData;
             listViewDashboard.ItemTapped += listViewDashboard_ItemTapped;
-            searchEntry.TextChanged += searchEntry_TextChanged;
+           // searchEntry.TextChanged += searchEntry_TextChanged;
             //lbl_username.Text=  Settings.UserName;
             //lbl_email.Text = Settings.Email;
         }
@@ -99,5 +99,10 @@ namespace GlattMart.Pages
 
             this.Title = PageTitle;
 		}
-	}
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
