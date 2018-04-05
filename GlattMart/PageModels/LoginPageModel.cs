@@ -134,7 +134,9 @@ namespace GlattMart.PageModels
                         {
                             Settings.UserName=resultSet.model.firstname+" "+ resultSet.model.lirstname;
                             Settings.Email = resultSet.model.email;
-                            await Application.Current.MainPage.Navigation.PushAsync(new MainDashBoardPage());
+                            //    await Application.Current.MainPage.Navigation.PushAsync(new MainDashBoardPage());
+                            await Application.Current.MainPage.Navigation.PopModalAsync();
+
                         }
                         else
                         {

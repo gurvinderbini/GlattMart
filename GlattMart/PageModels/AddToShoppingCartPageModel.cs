@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Net.Http;
 using System.Threading.Tasks;
 using GlattMart.Helper;
+using GlattMart.Helpers;
 using GlattMart.Models;
 using GlattMart.Pages;
 using Newtonsoft.Json;
@@ -257,6 +258,12 @@ namespace GlattMart
             {
                 return new Command(async () =>
                 {
+
+                    if (String.IsNullOrEmpty(Settings.UserName))
+                    {
+                        await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage(), true);
+                        return;
+                    }
                     if (Convert.ToInt32(SelectedQTY) > 0)
                     {
                         

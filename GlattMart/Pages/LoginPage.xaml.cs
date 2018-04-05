@@ -9,6 +9,7 @@ namespace GlattMart
     public partial class LoginPage : ContentPage
     {
         LoginPageModel uvm;
+        
         public LoginPage()
         {
             InitializeComponent();
@@ -16,7 +17,9 @@ namespace GlattMart
             BindingContext = uvm;  
         }
 
-		protected override void OnAppearing()
+       
+
+        protected override void OnAppearing()
 		{
 			base.OnAppearing();
 
