@@ -167,7 +167,9 @@ namespace GlattMart
                             var result = await Application.Current.MainPage.DisplayAlert("Success", "Account created successfully", null, "Continue to Login");
                             if (!result)
                             {
-                                await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+                                await Application.Current.MainPage.Navigation.PopAsync();
+
+                                await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
                             }
                             // await Application.Current.MainPage.Navigation.PopToRootAsync();
                         }

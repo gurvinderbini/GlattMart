@@ -35,9 +35,11 @@ namespace GlattMart.Pages
             listViewDashboard.ItemTemplate = new DataTemplate(typeof(DashboardListviewCell));
             //listViewDashboard.ItemsSource = listData;
             listViewDashboard.ItemTapped += listViewDashboard_ItemTapped;
-           // searchEntry.TextChanged += searchEntry_TextChanged;
+            // searchEntry.TextChanged += searchEntry_TextChanged;
             //lbl_username.Text=  Settings.UserName;
             //lbl_email.Text = Settings.Email;
+
+          
         }
 
         private void searchEntry_TextChanged(object sender, TextChangedEventArgs e)
@@ -59,15 +61,25 @@ namespace GlattMart.Pages
 
         async void logout_Clicked(object sender, EventArgs e)
         {
-            Settings.UserName = "";
-
-            await Navigation.PushAsync(new LoginPage());
-            var pages = Navigation.NavigationStack.ToList();
-            foreach (var page in pages)
+            if (String.IsNullOrEmpty(Settings.UserName))
             {
-                if (page.GetType() != typeof(LoginPage))
-                    Navigation.RemovePage(page);
+                await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage(), true);
             }
+            else
+            {
+                Settings.UserName = String.Empty;
+
+                await Navigation.PushAsync(new LoginPage());
+                var pages = Navigation.NavigationStack.ToList();
+                foreach (var page in pages)
+                {
+                    if (page.GetType() != typeof(LoginPage))
+                        Navigation.RemovePage(page);
+                }
+
+            }
+
+           
             //Navigation.PushAsync(new LoginPage());
         }
 
@@ -98,7 +110,26 @@ namespace GlattMart.Pages
             base.OnAppearing();
 
             this.Title = PageTitle;
-		}
+		    if (!String.IsNullOrEmpty(Settings.UserName))
+		    {
+		        LoggedInView.IsVisible = true;
+		        NotLoggedInView.IsVisible = false;
+		        EmailLabel.Text = Settings.Email;
+		        FullNameLabel.Text = Settings.UserName;
+
+		        LoginLabel.Text = "Logout";
+
+		    }
+		    else
+		    {
+		        LoggedInView.IsVisible = false;
+		        NotLoggedInView.IsVisible = true;
+		        EmailLabel.Text = String.Empty;
+		        FullNameLabel.Text = String.Empty;
+
+		        LoginLabel.Text = "Login";
+		    }
+        }
 
         private void Button_OnClicked(object sender, EventArgs e)
         {

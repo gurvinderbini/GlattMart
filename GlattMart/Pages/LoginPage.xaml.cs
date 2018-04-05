@@ -26,16 +26,27 @@ namespace GlattMart
             NavigationPage.SetHasNavigationBar(this, false);
 		}
 
-        void OnSignupBtnClicked(object sender, EventArgs args)
+       async void OnSignupBtnClicked(object sender, EventArgs args)
         {
             Title = "";
-            Navigation.PushAsync(new SignupPage());
+            //  Navigation.PushAsync(new SignupPage());
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+
+            await Application.Current.MainPage.Navigation.PushAsync(new SignupPage());
+
         }
 
-        void OnForgotPasswordClicked(object sender, EventArgs args)
+       async void OnForgotPasswordClicked(object sender, EventArgs args)
         {
             Title = "";
-            Navigation.PushAsync(new ForgotPasswordPage());
+            //  Navigation.PushAsync(new ForgotPasswordPage());
+            await Application.Current.MainPage.Navigation.PushAsync(new ForgotPasswordPage());
+
         }
-	}
+
+        private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
+    }
 }
